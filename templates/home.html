@@ -1,0 +1,209 @@
+{% block content %}
+<!-- External Styles -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+<style>
+  body {
+    background: linear-gradient(120deg, #e0f2ff, #f3f9ff);
+    font-family: 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+  }
+
+  .hero-wrapper {
+    background: white;
+    padding: 60px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+
+  .hero-wrapper h2 {
+    font-size: 2.7rem;
+    font-weight: bold;
+    color: #1f3b66;
+  }
+
+  .hero-wrapper p {
+    font-size: 1.1rem;
+    color: #444;
+  }
+
+  .typewriter {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #007bff;
+  }
+
+  .btn-animated {
+    background: linear-gradient(to right, #667eea, #764ba2);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    border-radius: 30px;
+    transition: 0.3s ease;
+    text-decoration: none;
+  }
+
+  .btn-animated:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  }
+
+  .quick-links {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+  }
+
+  .quick-card {
+    background: #ffffffdd;
+    backdrop-filter: blur(4px);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+    transition: transform 0.3s ease;
+    text-align: center;
+  }
+
+  .quick-card:hover {
+    transform: scale(1.05);
+    background: #f4f9ff;
+  }
+
+  .quick-card i {
+    font-size: 2.4rem;
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+
+  .badge-section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 40px;
+    animation: fadeInUp 1s ease-in-out;
+  }
+
+  .badge {
+    background: linear-gradient(135deg, #e0ecff, #d1f5ff);
+    color: #004080;
+    padding: 12px 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    font-weight: 500;
+    transition: 0.3s ease;
+  }
+
+  .badge:hover {
+    transform: scale(1.05);
+    background: #cfe7ff;
+  }
+
+  .cta-box {
+    background: #007bff;
+    color: white;
+    padding: 40px;
+    margin-top: 60px;
+    border-radius: 16px;
+    text-align: center;
+  }
+
+  .cta-box a {
+    margin: 0 10px;
+  }
+
+  @keyframes fadeInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+</style>
+
+<!-- Hero Section -->
+<div class="container py-5">
+  <div class="hero-wrapper mx-auto col-lg-10" data-aos="fade-in">
+    <h2>Hello, I’m <span class="text-primary">Sridhar</span></h2>
+    <p>I’m a <span class="typewriter" id="typewriter"></span> passionate about development.</p>
+    <p>Check out my skills, projects and journey below.</p>
+    <a href="/objective" class="btn btn-animated mt-4"><i class="bi bi-person-lines-fill me-2"></i> View My Profile</a>
+  </div>
+
+  <!-- Sections -->
+  <div class="quick-links mt-5" data-aos="fade-up">
+    <div class="quick-card">
+      <i class="bi bi-person-badge-fill"></i>
+      <h5>Objective</h5>
+      <p>Professional vision and goals.</p>
+      <a href="/objective" class="btn btn-sm btn-outline-primary mt-2">View</a>
+    </div>
+    <div class="quick-card">
+      <i class="bi bi-journal-bookmark"></i>
+      <h5>Education</h5>
+      <p>Academic background and certifications.</p>
+      <a href="/education" class="btn btn-sm btn-outline-success mt-2">View</a>
+    </div>
+    <div class="quick-card">
+      <i class="bi bi-lightning-charge"></i>
+      <h5>Skills</h5>
+      <p>Tech stack, frameworks, and languages.</p>
+      <a href="/skills" class="btn btn-sm btn-outline-info mt-2">View</a>
+    </div>
+    <div class="quick-card">
+      <i class="bi bi-diagram-3-fill"></i>
+      <h5>Projects</h5>
+      <p>Apps and websites I’ve built.</p>
+      <a href="/projects" class="btn btn-sm btn-outline-warning mt-2">View</a>
+    </div>
+  </div>
+
+  <!-- Badge Style Highlights -->
+  <div class="badge-section" data-aos="fade-up">
+    <div class="badge"><i class="bi bi-code-slash me-2"></i>Full Stack Developer</div>
+    <div class="badge"><i class="bi bi-laptop me-2"></i>Web UI/UX Design</div>
+    <div class="badge"><i class="bi bi-database-fill-check me-2"></i>MySQL & APIs</div>
+    <div class="badge"><i class="bi bi-terminal-dash me-2"></i>Python Automation</div>
+    <div class="badge"><i class="bi bi-people-fill me-2"></i>Team Player</div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-box mt-5" data-aos="zoom-in">
+    <h4>Want to connect or download my resume?</h4>
+    <a href="/contact" class="btn btn-light btn-lg mt-3">Contact Me</a>
+    <a href="/static/resume.pdf" class="btn btn-outline-light btn-lg mt-3" download>Download Resume</a>
+  </div>
+</div>
+
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+</script>
+<script>
+  const roles = ["Full Stack Developer", "Python Developer", "Web Designer"];
+  let current = 0;
+  const typewriter = document.getElementById("typewriter");
+
+  function type() {
+    let role = roles[current];
+    let i = 0;
+    typewriter.textContent = "";
+
+    const interval = setInterval(() => {
+      typewriter.textContent += role.charAt(i);
+      i++;
+      if (i === role.length) {
+        clearInterval(interval);
+        setTimeout(() => {
+          current = (current + 1) % roles.length;
+          type();
+        }, 2000);
+      }
+    }, 100);
+  }
+
+  document.addEventListener("DOMContentLoaded", type);
+</script>
+{% endblock %}
